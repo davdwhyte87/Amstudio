@@ -1,0 +1,40 @@
+<section>
+  <div class="container">
+      <div class="row" style="margin: 2cm;" >
+          <div class="col-md-5 offset-md-3">
+              <div class="card">
+                  <div class="card-header">
+                    <h6>Project: {{project.title}}</h6>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="form-group">
+                        <label>Title</label>
+                        <input [(ngModel)]="project.title" class="form-control" type="text" name="title"/>
+                      </div>
+                      <div class="form-group">
+                          <label>Artiste Name</label>
+                          <input [(ngModel)]="project.artiste_name" class="form-control" type="text" name="artiste_name"/>
+                      </div>
+                      <div class="form-group">
+                        <label>Image</label>
+                        <input [(ngModel)]="image.file" (change)="change($event)" class="form-control" type="file" name="image"/>
+                      </div>
+                      <div class="form-group">
+                          <label>Project Link</label>
+                          <input [(ngModel)]="project.project_link" class="form-control" type="text" name="project_link"/>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn cbtn" (click)="createProject()">Create project <img *ngIf="loader" class="loader" src="../assets/images/loader.gif"></button>
+                      </div>
+                      <div class="form-group">
+                        <a routerLink="/admin-project-view">View projects</a>
+
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

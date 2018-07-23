@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col offset-md-5" style="padding-top: 30px;">
+            <img *ngIf="loader"  class="loader" src="../assets/images/loader.gif">
+        </div>
+      </div>
+</div>
+<section *ngIf="!loader" id="projects" class="container">
+        <div class="" style="text-align: center; padding-bottom: 30px;">
+            <h2>Our Projects</h2>
+        </div>
+        <br>
+        <div class="row">
+          <div *ngFor="let project of projects " class="col-md">
+            <div class="card project">
+                <img [src]="project.image_link" class="project-img"/>
+              <div class="card-block">
+                <h3 class="card-title">{{project.artiste_name}}</h3>
+                <a href="{{project.project_link}}">{{project.title}}</a>
+              </div>
+            </div>
+          </div>   
+        </div>
+        <div *ngIf="error" class="row">
+          <h3>An error occured</h3>
+        </div>
+    </section>
+

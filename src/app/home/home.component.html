@@ -1,0 +1,155 @@
+<section id="home">
+  <nav class="navbar sticky-top navbar-expand-lg  navbar-light bg-light cnav">
+      <a class="navbar-brand" href="#">Am studio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNav">
+        <ul class="navbar-nav  ml-auto nl" >
+          <li class="nav-item active">
+            <a class="nav-link nav-itm" href="#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-itm" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-itm" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-us">Contact</a>
+          <!-- </li>
+          <li *ngIf="a_state" class="nav-item">
+            <a class="nav-link" routerLink="/login">Sign in</a>
+          </li>
+          <li *ngIf="a_state" class="nav-item">
+            <a class="nav-link" routerLink="/admin-project-view">Projects</a>
+          </li> -->
+          <li *ngIf="authState" class="nav-item">
+            <button class="btn cbtn" (click)="signOut()">Logout <img *ngIf="loader" class="loader" src="../assets/images/loader.gif"></button>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <div class="jumbotron" style="background-image: url(assets/images/studio.jpg) !important;">
+    <h1 class="hero-header wow fadeInLeft" data-wow-delay="0.6s">Welcome to am studio</h1>
+  </div>  
+</section>
+  <section id="services" class="container">
+    <div class="wow fadeInUp" style="text-align: center; padding-bottom: 30px;">
+      <h2>Our Services</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 wow fadeInLeft" data-wow-delay="1s">
+        <div class="serv">
+          <img src="../assets/images/s1.png" class="s-img"/>
+        </div>
+        <h4 class="">Audio Mixing</h4>
+        <p class="text-muted s-text">
+          We mix audio tracks, from jinggles to songs and full albums. We have professional engineers
+          that will handle your project.
+        </p>
+      </div>
+      <div class="col-md-4 offset-md-0.5 wow fadeInLeft" data-wow-delay="0.6s">
+        <div class="serv">
+          <img src="../assets/images/s2.png" class="s-img"/>
+        </div>
+        <h4 class="">Audio Recording</h4>
+        <p class="text-muted s-text">
+          We have a standard recording studio, we have the capacity to record live instruments and 
+          professionals to handle your recording.
+        </p>
+      </div>
+      <div class="col-md-4 wow fadeInLeft"  data-wow-delay="0.2s">
+        <div class="serv">
+          <img src="../assets/images/s3.png" class="s-img"/>
+        </div>
+        <h4 class="">Audio Mastering</h4>
+        <p class="text-muted s-text">
+          With up to date equipment and professional engineers, you are sure of professional mastering. 
+        </p>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section id="why-us" class="">
+    <div class="">
+      <div style="background-image: url('assets/images/cta1.jpg'); background-repeat:repeat; background-size:cover;" class="cta">
+        <h1 class="text-center">Let Quality Sound Speek For You!</h1>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section id="projects" class="container">
+      <div class="" style="text-align: center; padding-bottom: 30px;">
+          <h2>Our projects</h2>
+      </div>
+      <div class="row">
+        <div *ngFor="let project of projects " class="col-md">
+          <div class="card project">
+              <img [src]="project.image_link" class="project-img"/>
+            <div class="card-block">
+              <h3 class="card-title">{{project.artiste_name}}</h3>
+              <a href="{{project.project_link}}">{{project.title}}</a>
+            </div>
+          </div>
+        </div>   
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 offset-md-5">
+          <a class="btn cbtn" routerLink="project-view">Load more..</a>
+        </div>
+      </div>
+  </section>
+  <div class="sp-s"></div>
+  <section id="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" style="padding-top: 1cm;">
+          <img src="../assets/images/abt.jpg" class="rounded-circle abt-img"/>
+        </div>
+        <div class="col-md-6">
+            <div class="" style=" color: #f2f2f2 !important;">
+                <h2 class="text-center">About Us</h2>
+                <p class="text-center" style="padding: 10px; font-size: 23px;">
+                  We are an audio production company. We make use of the latest technology to create exceptional sound. 
+                  For us, quality is key. Our core services are audio mixing, mastering, and recording.
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="../assets/images/phone.png" class="cu-img"/>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <p class="cu-text">Phone:+234-90309039</p>
+              </div>
+              <div class="row">
+                <p class="cu-text">Email: amstudio@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="../assets/images/location.png" class="cu-img"/>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <p class="cu-text">Address: Opposite general gas Akobo Bodija, Ibadan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
